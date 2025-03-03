@@ -91,7 +91,12 @@ export const Footer = () => {
           </Flex>
 
           <Flex direction='column' gap={8}>
-            <Title order={3} fz={{ base: '16px', sm: '22px' }} fw={700}>
+            <Title
+              c='#4E525A'
+              order={3}
+              fz={{ base: '16px', sm: '22px' }}
+              fw={700}
+            >
               {t('insurances')}
             </Title>
 
@@ -115,7 +120,12 @@ export const Footer = () => {
           </Flex>
 
           <Flex direction='column' gap={8}>
-            <Title order={3} fz={{ base: '16px', sm: '22px' }} fw={700}>
+            <Title
+              c='#4E525A'
+              order={3}
+              fz={{ base: '16px', sm: '22px' }}
+              fw={700}
+            >
               {t('contacts')}
             </Title>
 

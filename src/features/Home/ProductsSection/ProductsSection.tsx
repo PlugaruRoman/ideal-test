@@ -28,7 +28,7 @@ export const ProductsSection = () => {
         pos='relative'
       >
         <Flex gap='40px'>
-          <Title order={2} fz='36px' fw={600}>
+          <Title order={2} fz='40px' miw='20%' fw={600}>
             {t('insurance_types')}
           </Title>
 

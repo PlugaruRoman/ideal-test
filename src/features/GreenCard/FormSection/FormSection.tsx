@@ -15,6 +15,7 @@ import {
 import type { CardProps } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useTranslation } from '@/i18n'
+import Image from 'next/image'
 
 import { Button, PageContainer } from '@/components'
 
@@ -70,104 +71,120 @@ export const FormSection = ({ ...props }: CardProps) => {
         h={{ base: '100%', sm: 'calc(100vh - 186px)' }}
         pos='relative'
       >
-        <Card
-          className='calculator-form'
-          p={{ xs: '25px 24px', md: '30px 26px', lg: '40px 35px' }}
-          maw={{ xs: '100%', md: '540px' }}
-          radius='20px'
-          w='100%'
-          shadow='0px 24px 40px 0px var(--mantine-color-custom-10)'
-          {...props}
-        >
-          <Title order={3} fz='28px' mb='20px'>
-            {t('green_card')}
-          </Title>
+        <Flex align='center'>
+          <Card
+            className='calculator-form'
+            p={{ xs: '25px 24px', md: '30px 26px', lg: '40px 35px' }}
+            maw={{ xs: '100%', md: '540px' }}
+            radius='20px'
+            w='100%'
+            shadow='0px 24px 40px 0px var(--mantine-color-custom-10)'
+            {...props}
+          >
+            <Title order={3} fz='28px' mb='20px'>
+              {t('green_card')}
+            </Title>
 
-          <form onSubmit={form.onSubmit(() => {})}>
-            <Flex direction='column' gap={{ xs: '24px', sm: '30px' }}>
-              <Flex direction='column' gap='7px'>
-                <InputBase
-                  size='md'
-                  name='idno'
-                  radius='10px'
-                  fw={600}
-                  label={t('IDNP/IDNO')}
-                  placeholder='200123456789'
-                  key={form.key('start_work')}
-                  {...form.getInputProps('start_work')}
-                />
+            <form onSubmit={form.onSubmit(() => {})}>
+              <Flex direction='column' gap={{ xs: '24px', sm: '30px' }}>
+                <Flex direction='column' gap='7px'>
+                  <InputBase
+                    size='md'
+                    name='idno'
+                    radius='10px'
+                    fw={600}
+                    label={t('IDNP/IDNO')}
+                    placeholder='200123456789'
+                    key={form.key('start_work')}
+                    {...form.getInputProps('start_work')}
+                  />
 
-                <InputBase
-                  size='md'
-                  name='registration_certificate_number'
-                  radius='10px'
-                  fw={600}
-                  label={t('registration_certificate_number')}
-                  placeholder='22123456'
-                  key={form.key('registration_certificate_number')}
-                  {...form.getInputProps('registration_certificate_number')}
-                />
+                  <InputBase
+                    size='md'
+                    name='registration_certificate_number'
+                    radius='10px'
+                    fw={600}
+                    label={t('registration_certificate_number')}
+                    placeholder='22123456'
+                    key={form.key('registration_certificate_number')}
+                    {...form.getInputProps('registration_certificate_number')}
+                  />
 
-                <Grid>
-                  <GridCol span={6}>
-                    <Select
-                      radius='10px'
-                      checkIconPosition='right'
-                      label={t('coverage_area')}
-                      placeholder={t('europe')}
-                      data={coverageSelect}
-                      defaultValue={'europe'}
-                      comboboxProps={{
-                        transitionProps: { transition: 'pop', duration: 200 },
-                      }}
-                    />
-                  </GridCol>
+                  <Grid>
+                    <GridCol span={6}>
+                      <Select
+                        radius='10px'
+                        checkIconPosition='right'
+                        label={t('coverage_area')}
+                        placeholder={t('europe')}
+                        data={coverageSelect}
+                        defaultValue={'europe'}
+                        comboboxProps={{
+                          transitionProps: { transition: 'pop', duration: 200 },
+                        }}
+                      />
+                    </GridCol>
 
-                  <GridCol span={6}>
-                    <Select
-                      radius='10px'
-                      checkIconPosition='right'
-                      label={t('validity_period')}
-                      placeholder={t('validity_period')}
-                      defaultValue={'15'}
-                      data={termSelect}
-                      comboboxProps={{
-                        transitionProps: { transition: 'pop', duration: 200 },
-                      }}
-                    />
-                  </GridCol>
-                </Grid>
+                    <GridCol span={6}>
+                      <Select
+                        radius='10px'
+                        checkIconPosition='right'
+                        label={t('validity_period')}
+                        placeholder={t('validity_period')}
+                        defaultValue={'15'}
+                        data={termSelect}
+                        comboboxProps={{
+                          transitionProps: { transition: 'pop', duration: 200 },
+                        }}
+                      />
+                    </GridCol>
+                  </Grid>
+                </Flex>
+
+                <Flex direction='column' gap='20px'>
+                  <Checkbox
+                    color='var(--mantine-color-custom-3)'
+                    label={
+                      <Text
+                        fz={{ xs: '12px', sm: '15px' }}
+                        c='var(--mantine-color-custom-2)'
+                      >
+                        {t('agree_terms_and_data_processing')}
+                      </Text>
+                    }
+                    key={form.key('confirm_confidentiality_policy')}
+                    name='confirm_confidentiality_policy'
+                    {...form.getInputProps('confirm_confidentiality_policy', {
+                      type: 'checkbox',
+                    })}
+                  />
+                </Flex>
+
+                <Button
+                  color='var(--mantine-color-hover-3)'
+                  bg='var(--mantine-color-custom-3)'
+                  type='submit'
+                >
+                  {t('calculate')}
+                </Button>
               </Flex>
+            </form>
+          </Card>
 
-              <Flex direction='column' gap='20px'>
-                <Checkbox
-                  color='var(--mantine-color-custom-3)'
-                  label={
-                    <Text
-                      fz={{ xs: '12px', sm: '15px' }}
-                      c='var(--mantine-color-custom-2)'
-                    >
-                      {t('agree_terms_and_data_processing')}
-                    </Text>
-                  }
-                  key={form.key('confirm_confidentiality_policy')}
-                  name='confirm_confidentiality_policy'
-                  {...form.getInputProps('confirm_confidentiality_policy', {
-                    type: 'checkbox',
-                  })}
-                />
-              </Flex>
-
-              <Button
-                color='var(--mantine-color-hover-3)'
-                bg='var(--mantine-color-custom-3)'
-                type='submit'
-              >
-                {t('calculate')}
-              </Button>
-            </Flex>
-          </form>
-        </Card>
+          <Box w='100%' pos='relative' h='500px'>
+            <Image
+              src='/insurance-image.png'
+              alt='background-image'
+              fill
+              sizes='100vw'
+              style={{
+                objectFit: 'contain',
+                position: 'absolute',
+              }}
+              priority
+            />
+          </Box>
+        </Flex>
       </PageContainer>
     </Box>
   )

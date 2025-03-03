@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Onest } from 'next/font/google'
 
 import '@/styles/global.scss'
 import '@/styles/helper.scss'
@@ -7,13 +7,13 @@ import '@mantine/core/styles.css'
 import '@mantine/dates/styles.css'
 import '@mantine/notifications/styles.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const geistSans = Onest({
+  variable: '--font-onest-sans',
   subsets: ['latin'],
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const geistMono = Onest({
+  variable: '--font-onest-mono',
   subsets: ['latin'],
 })
 
