@@ -1,0 +1,6 @@
+.contact-item {
+  transition: color 0.3s ease;
+  &:hover {
+    color: var(--mantine-color-custom-3);
+  }
+}

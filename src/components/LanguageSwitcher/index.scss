@@ -1,0 +1,26 @@
+.language-switcher {
+  gap: 15px;
+
+  div {
+    &::before {
+      display: none;
+    }
+  }
+  label {
+    height: 40px;
+    width: 70px;
+    border: 1px solid var(--mantine-color-custom-3);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    &::before {
+      display: none;
+    }
+
+    &[data-active] {
+      border: none;
+    }
+  }
+}

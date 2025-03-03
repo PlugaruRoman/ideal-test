@@ -1,0 +1,23 @@
+.language-switcher-dropdown {
+  overflow: hidden;
+  padding: 0;
+  z-index: 99;
+  &__disabled {
+    background-color: var(--mantine-color-custom-5);
+    border-radius: 0;
+  }
+
+  &__selected {
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      height: 2px;
+      background-color: var(--mantine-color-custom-3);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      bottom: -4px;
+    }
+  }
+}
