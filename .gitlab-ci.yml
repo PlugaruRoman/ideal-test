@@ -1,16 +1,14 @@
 image: node:lts
 
 before_script:
-  - yarn
+  - yarn install
 
 pages:
   script:
-    - yarn build  # Build the standalone app
-    - mkdir -p public
-    - cp -r build/standalone public/  # Move standalone build to public
-    - cp -r build/static public/build/static  # Ensure static files are included
+    - yarn build && yarn export
+    - mv out public  # Move the static export output to public for GitLab Pages
   artifacts:
     paths:
-      - public  # Expose the standalone build for GitLab Pages
+      - public  # GitLab Pages serves from public/
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
