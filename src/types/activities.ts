@@ -4,4 +4,5 @@ export type ActivitiesType = {
   key: string
   label: string
   description: string
+  disabled: boolean
 }

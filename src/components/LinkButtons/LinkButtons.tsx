@@ -35,19 +35,19 @@ const links = [
     color: '#3B5998',
   },
   {
-    link: 'https://www.facebook.com/idealtestare/',
+    link: 'https://wa.me/37360151011',
     label: <Whatsapp />,
     key: SocialMediaType.WHATSAPP,
     color: '#25D366',
   },
   {
-    link: 'https://www.facebook.com/idealtestare/',
+    link: 'viber://chat?number=%2B37360151011',
     label: <ViberIcon />,
     key: SocialMediaType.VIBER,
     color: '#7360F2',
   },
   {
-    link: 'https://www.facebook.com/idealtestare/',
+    link: 'https://t.me/+37360151011',
     label: <Telegram />,
     key: SocialMediaType.TELEGRAM,
     color: '#2AABEE',

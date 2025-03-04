@@ -50,7 +50,7 @@ export const Footer = () => {
             <Flex gap={2} direction='column'>
               <ContactItem
                 type='company'
-                value='Ideal Test SRL'
+                value='Ideal Asig'
                 direction='row'
                 align='start'
                 justify='start'
@@ -101,21 +101,23 @@ export const Footer = () => {
             </Title>
 
             <Flex gap={4} direction='column'>
-              {products.map((product) => (
-                <MotionBox
-                  key={product?.key}
-                  fz='16px'
-                  fw='600'
-                  className='cursor-pointer'
-                  pos='relative'
-                  variants={itemsVariants}
-                  initial='initial'
-                  whileHover='hover'
-                  onClick={() => console.log(product.key)}
-                >
-                  {t(product?.label)}
-                </MotionBox>
-              ))}
+              {products
+                ?.filter(({ disabled }) => !disabled)
+                ?.map((product) => (
+                  <MotionBox
+                    key={product?.key}
+                    fz='16px'
+                    fw='600'
+                    className='cursor-pointer'
+                    pos='relative'
+                    variants={itemsVariants}
+                    initial='initial'
+                    whileHover='hover'
+                    onClick={() => console.log(product.key)}
+                  >
+                    {t(product?.label)}
+                  </MotionBox>
+                ))}
             </Flex>
           </Flex>
 

@@ -52,7 +52,7 @@ export const NavBar = ({
 
   const parts = pathname.split('/')
   const currentPath = parts.length > 2 ? `/${parts[2]}` : pathname
-  console.log(currentPath)
+
   return (
     <Flex
       gap={{ base: 10, sm: 25, lg: 38 }}
@@ -60,36 +60,38 @@ export const NavBar = ({
       direction='row'
       {...props}
     >
-      {products?.map((product) => (
-        <MotionBox
-          fz='16px'
-          fw='600'
-          className='cursor-pointer'
-          pos='relative'
-          variants={itemsVariants}
-          custom={isFooterSide}
-          initial='initial'
-          whileHover='hover'
-          animate={currentPath === product.path ? 'active' : 'initial'}
-          key={product.id}
-          onClick={() => router.push(product.path)}
-          {...navItemProps}
-        >
-          {t(product.label)}
-
+      {products
+        ?.filter(({ disabled }) => !disabled)
+        .map((product) => (
           <MotionBox
-            variants={lineVariants}
+            fz='16px'
+            fw='600'
+            className='cursor-pointer'
+            pos='relative'
+            variants={itemsVariants}
+            custom={isFooterSide}
             initial='initial'
             whileHover='hover'
             animate={currentPath === product.path ? 'active' : 'initial'}
-            h='2px'
-            w='100%'
-            pos='absolute'
-            bottom='-4px'
-            bg='var(--mantine-color-custom-3)'
-          />
-        </MotionBox>
-      ))}
+            key={product.id}
+            onClick={() => router.push(product.path)}
+            {...navItemProps}
+          >
+            {t(product.label)}
+
+            <MotionBox
+              variants={lineVariants}
+              initial='initial'
+              whileHover='hover'
+              animate={currentPath === product.path ? 'active' : 'initial'}
+              h='2px'
+              w='100%'
+              pos='absolute'
+              bottom='-4px'
+              bg='var(--mantine-color-custom-3)'
+            />
+          </MotionBox>
+        ))}
     </Flex>
   )
 }

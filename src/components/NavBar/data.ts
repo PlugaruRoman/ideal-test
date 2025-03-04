@@ -15,6 +15,7 @@ export const products = [
     label: 'RCA',
     description: 'mandatory_internal_auto_liability_insurance',
     path: '/rca',
+    disabled: false,
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ export const products = [
     label: 'green_card',
     description: 'mandatory_external_auto_liability_insurance',
     path: '/green-card',
+    disabled: false,
   },
   {
     id: 3,
@@ -31,5 +33,6 @@ export const products = [
     label: 'technical_testing',
     description: 'technical_inspection',
     path: '/technical-testing',
+    disabled: true,
   },
 ]

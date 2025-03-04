@@ -1,14 +1,38 @@
 'use client'
 
-import { Box, Flex, Title } from '@mantine/core'
+import { Box, BoxProps, Flex, FlexProps, Title } from '@mantine/core'
 import { PageContainer } from '@/components'
 import { useTranslation } from '@/i18n'
 import Image from 'next/image'
-
+import ArrowDown from '@/icons/arrow-down.svg'
 import { NavSectionsType } from '@/types/sections'
+import { motion } from 'framer-motion'
+import { useScrollToSection } from '@/hooks/useScrollToSection'
+
+type MotionBoxProps = {
+  onClick?: (event: Event) => void
+} & BoxProps
+
+const MotionBox = motion.create(Box as React.FC<MotionBoxProps>)
+const MotionFlex = motion.create(Flex as React.FC<FlexProps>)
+
+const arrowVariants = {
+  initial: { y: 0 },
+  hover: {
+    color: '#FDD910',
+    y: [0, -10, 0],
+    transition: {
+      repeat: Infinity,
+      duration: 1,
+      color: '#FDD910',
+      ease: 'easeInOut',
+    },
+  },
+}
 
 export const HeroSection = () => {
   const { t } = useTranslation()
+  const { scrollToSection } = useScrollToSection()
 
   return (
     <Box
@@ -63,6 +87,46 @@ export const HeroSection = () => {
             />
           </Box>
         </Flex>
+
+        <MotionFlex
+          justify='center'
+          direction='column'
+          align='center'
+          pos='absolute'
+          whileHover='hover'
+          className='cursor-pointer'
+          left='50%'
+          bottom='0'
+          onClick={() => scrollToSection(NavSectionsType.PRODUCTS_SECTION)}
+        >
+          <Title
+            c='#4E525A'
+            order={3}
+            fz={{ base: '16px', sm: '22px' }}
+            fw={700}
+          >
+            {t('insurances')}
+          </Title>
+          <MotionBox
+            c='#4E525A'
+            variants={arrowVariants}
+            w='50px'
+            h='20px'
+            fz='50px'
+          >
+            <ArrowDown />
+          </MotionBox>
+
+          <MotionBox
+            c='#4E525A'
+            w='50px'
+            variants={arrowVariants}
+            h='20px'
+            fz='50px'
+          >
+            <ArrowDown />
+          </MotionBox>
+        </MotionFlex>
       </PageContainer>
     </Box>
   )

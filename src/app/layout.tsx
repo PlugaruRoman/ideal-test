@@ -11,19 +11,13 @@ import { theme } from '@/styles/theme'
 import { Footer, Header } from '@/components'
 import { Notifications } from '@mantine/notifications'
 
-const geistSans = Onest({
-  variable: '--font-onest-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Onest({
-  variable: '--font-onest-mono',
+const onestFont = Onest({
   subsets: ['latin'],
 })
 
 export const metadata: Metadata = {
-  title: 'Ideal Test',
-  description: 'Ideal Test',
+  title: 'Ideal Asig',
+  description: 'Ideal Asig',
 }
 
 const customTheme = createTheme(theme)
@@ -35,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ro'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={onestFont.className}>
         <MantineProvider theme={customTheme}>
           <Notifications />
 

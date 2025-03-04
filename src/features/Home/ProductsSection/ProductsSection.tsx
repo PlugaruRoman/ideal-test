@@ -37,7 +37,7 @@ export const ProductsSection = () => {
               <GridCol
                 span={4}
                 key={product?.key}
-                onClick={() => router.push(product?.path)}
+                onClick={() => !product?.disabled && router.push(product?.path)}
               >
                 <ProductCard data={product} />
               </GridCol>

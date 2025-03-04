@@ -53,7 +53,7 @@ export const FormSection = ({ ...props }: CardProps) => {
     { label: `9 ${t('months')}`, value: '9' },
     { label: `10 ${t('months')}`, value: '10' },
     { label: `11 ${t('months')}`, value: '11' },
-    { label: `1 ${t('age')}`, value: '111' },
+    { label: `1 ${t('year')}`, value: '111' },
   ]
 
   return (

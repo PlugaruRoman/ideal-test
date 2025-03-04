@@ -1,6 +1,7 @@
 'use client'
 
 import {
+  Badge,
   Box,
   Card,
   CardProps,
@@ -33,11 +34,10 @@ const MotionCard = motion.create(
 export const ProductCard = ({ data }: FieldsActivityCardProps) => {
   const { t } = useTranslation()
 
-  const { label, key, description, color } = data
+  const { label, key, description, color, disabled } = data
 
   return (
     <MotionCard
-      className='cursor-pointer'
       shadow='lg'
       padding='30px'
       radius='25px'
@@ -45,10 +45,16 @@ export const ProductCard = ({ data }: FieldsActivityCardProps) => {
       miw={{ sm: '200px' }}
       w='100%'
       h='100%'
-      whileHover={{
-        scale: 1.03,
-        boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.2)',
-      }}
+      whileHover={
+        !disabled
+          ? {
+              cursor: 'pointer',
+              scale: 1.03,
+              boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.2)',
+            }
+          : {}
+      }
+      pos='relative'
       transition={{ type: 'spring', stiffness: 100 }}
     >
       <Flex direction='column' justify='center' gap={{ xs: '20', lg: '20px' }}>
@@ -56,6 +62,20 @@ export const ProductCard = ({ data }: FieldsActivityCardProps) => {
           <Box h='80px' c={color} fz='80px'>
             {cardIcons?.[key as keyof typeof cardIcons]}
           </Box>
+
+          {disabled && (
+            <Badge
+              fz='16px'
+              pos='absolute'
+              right='10px'
+              size='lg'
+              top='20px'
+              color='#4E525A'
+              style={{ zIndex: 1 }}
+            >
+              {t('in_progress')}
+            </Badge>
+          )}
         </Flex>
 
         <Text fw={700} fz='24px'>
@@ -66,6 +86,18 @@ export const ProductCard = ({ data }: FieldsActivityCardProps) => {
           {t(description)}
         </Text>
       </Flex>
+
+      {disabled && (
+        <Box
+          opacity='0.5'
+          w='100%'
+          pos='absolute'
+          h='100%'
+          bg=' #F5F6F6 '
+          left={0}
+          bottom={0}
+        />
+      )}
     </MotionCard>
   )
 }
