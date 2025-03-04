@@ -113,7 +113,7 @@ export const Footer = () => {
                     variants={itemsVariants}
                     initial='initial'
                     whileHover='hover'
-                    onClick={() => console.log(product.key)}
+                    onClick={() => router.push(product.path)}
                   >
                     {t(product?.label)}
                   </MotionBox>
