@@ -2,11 +2,11 @@
 image: node:lts
 before_script:
   # Functions that should be executed before the build script is run
-  - npm ci
+  - yarn install
 pages:
   script:
     # Specify the steps involved to build your app here
-    - npm run build
+    - yarn build
   artifacts:
     paths:
       # Store the "out" folder as an artifact so Pages can serve it
