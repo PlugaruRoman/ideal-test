@@ -16,14 +16,13 @@ export const ProductsSection = () => {
   return (
     <Box
       w='100%'
-      mih={{ base: '750px', sm: '900px' }}
-      h={{ base: '100%', sm: '100vh' }}
+      h={{ base: '100%', sm: 'min-content' }}
       className='overflow-hidden'
     >
       <PageContainer
         mx={{ xs: '0', sm: '25px' }}
-        mih={{ base: '100%', sm: '720px' }}
         h='100%'
+        py='200px'
         id={NavSectionsType.PRODUCTS_SECTION}
         pos='relative'
       >

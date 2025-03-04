@@ -33,7 +33,7 @@ export const Footer = () => {
   return (
     <PageContainer
       py='30px'
-      bgGradient='linear-gradient(180deg, #F5F6F6 0%, rgba(255, 255, 255, 0) 100%);'
+      bgGradient='linear-gradient(180deg, #F5F6F6 0%, rgba(255, 255, 255, 0) 100%)'
     >
       <Flex direction='column' gap={{ xs: '0', lg: '30px' }} justify='center'>
         <Flex align='start' justify='space-between' gap={100}>

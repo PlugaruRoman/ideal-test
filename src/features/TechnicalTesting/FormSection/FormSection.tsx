@@ -54,6 +54,7 @@ export const FormSection = ({ ...props }: CardProps) => {
             maw={{ xs: '100%', md: '540px' }}
             radius='20px'
             w='100%'
+            h='max-content'
             shadow='0px 24px 40px 0px var(--mantine-color-custom-10)'
             {...props}
           >
@@ -119,7 +120,7 @@ export const FormSection = ({ ...props }: CardProps) => {
 
           <Box w='100%' pos='relative' h='500px'>
             <Image
-              src='/insurance-image.png'
+              src='/background-insurance.png'
               alt='background-image'
               fill
               sizes='100vw'

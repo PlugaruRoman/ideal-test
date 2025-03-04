@@ -53,6 +53,7 @@ export const FormSection = ({ ...props }: CardProps) => {
             p={{ xs: '25px 24px', md: '30px 26px', lg: '40px 35px' }}
             maw={{ xs: '100%', md: '540px' }}
             radius='20px'
+            h='max-content'
             w='100%'
             shadow='0px 24px 40px 0px var(--mantine-color-custom-10)'
             {...props}

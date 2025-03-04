@@ -74,6 +74,7 @@ export const FormSection = ({ ...props }: CardProps) => {
         <Flex align='center'>
           <Card
             className='calculator-form'
+            h='max-content'
             p={{ xs: '25px 24px', md: '30px 26px', lg: '40px 35px' }}
             maw={{ xs: '100%', md: '540px' }}
             radius='20px'
@@ -173,7 +174,7 @@ export const FormSection = ({ ...props }: CardProps) => {
 
           <Box w='100%' pos='relative' h='500px'>
             <Image
-              src='/insurance-image.png'
+              src='/green-card-background.png'
               alt='background-image'
               fill
               sizes='100vw'
