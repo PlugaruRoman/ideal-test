@@ -1,6 +1,6 @@
 import { FormSection, QuestionsSection } from '@/features/GreenCard'
 
-export const GreenCard = () => {
+const GreenCard = () => {
   return (
     <>
       <FormSection />

@@ -1,6 +1,6 @@
 import { HeroSection, ProductsSection } from '@/features/Home'
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <>
       <HeroSection />

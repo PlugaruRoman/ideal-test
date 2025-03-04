@@ -1,6 +1,6 @@
 import { FormSection, QuestionsSection } from '@/features/TechnicalTesting'
 
-export const TechnicalTesting = () => {
+const TechnicalTesting = () => {
   return (
     <>
       <FormSection />

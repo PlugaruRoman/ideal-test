@@ -1,6 +1,6 @@
 import { FormSection, QuestionsSection } from '@/features/RCA'
 
-export const RCAPage = () => {
+const RCAPage = () => {
   return (
     <>
       <FormSection />
