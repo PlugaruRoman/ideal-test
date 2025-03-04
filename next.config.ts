@@ -16,7 +16,6 @@ const nextConfig: NextConfig = {
   ],
 
   output: 'standalone',
-  distDir: 'out',
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
     turbo: {
