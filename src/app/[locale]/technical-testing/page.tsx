@@ -1,9 +1,14 @@
-import { FormSection, QuestionsSection } from '@/features/TechnicalTesting'
+import {
+  FormSection,
+  QuestionsSection,
+  InfoSection,
+} from '@/features/TechnicalTesting'
 
 const TechnicalTesting = () => {
   return (
     <>
       <FormSection />
+      <InfoSection />
       <QuestionsSection />
     </>
   )

@@ -13,8 +13,8 @@ export const HeroSection = () => {
   return (
     <Box
       w='100%'
-      mih={{ base: '750px', sm: '900px' }}
-      h={{ base: '100%', sm: '100vh' }}
+      mih={{ base: '750px', sm: '1000px' }}
+      h={{ base: '100%', sm: '100%' }}
       className='overflow-hidden'
       pos='relative'
     >

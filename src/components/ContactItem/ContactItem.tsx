@@ -40,6 +40,7 @@ const getValueType = (type: string, value: string) => {
       <Text
         className='contact-item'
         fz='16px'
+        fw={600}
         lh='30px'
         component='a'
         href={`tel:${value}`}

@@ -1,9 +1,10 @@
-import { FormSection, QuestionsSection } from '@/features/RCA'
+import { FormSection, QuestionsSection, InfoSection } from '@/features/RCA'
 
 const RCAPage = () => {
   return (
     <>
       <FormSection />
+      <InfoSection />
       <QuestionsSection />
     </>
   )

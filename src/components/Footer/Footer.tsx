@@ -132,7 +132,7 @@ export const Footer = () => {
             <Flex gap={4} direction='column'>
               <ContactItem
                 type='phone'
-                value='0601 51 011'
+                value='+373 60 151 011'
                 direction='row'
                 align='start'
                 justify='start'

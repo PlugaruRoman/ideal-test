@@ -22,12 +22,11 @@ export const FormSection = ({ ...props }: CardProps) => {
   const form = useForm({
     mode: 'uncontrolled',
     validate: {
-      start_work: (value) =>
-        value ? null : `${t('work_start_date')} ${t('is_required')}`,
-      finish_work: (value) =>
-        value ? null : `${t('work_end_date')} ${t('is_required')}`,
-      confirm_confidentiality_policy: (value) =>
-        value ? null : t('privacy_required'),
+      idno: (value) => (value ? null : t('is_required')),
+      registration_certificate_number: (value) =>
+        value ? null : t('is_required'),
+      agree_terms_and_data_processing: (value) =>
+        value ? null : t('is_required'),
     },
   })
 
@@ -70,10 +69,10 @@ export const FormSection = ({ ...props }: CardProps) => {
                     name='idno'
                     radius='8px'
                     fw={600}
-                    label={t('IDNP/IDNO')}
+                    label={t('idno')}
                     placeholder='200123456789'
-                    key={form.key('start_work')}
-                    {...form.getInputProps('start_work')}
+                    key={form.key('idno')}
+                    {...form.getInputProps('idno')}
                   />
 
                   <InputBase
@@ -99,9 +98,9 @@ export const FormSection = ({ ...props }: CardProps) => {
                         {t('agree_terms_and_data_processing')}
                       </Text>
                     }
-                    key={form.key('confirm_confidentiality_policy')}
-                    name='confirm_confidentiality_policy'
-                    {...form.getInputProps('confirm_confidentiality_policy', {
+                    key={form.key('agree_terms_and_data_processing')}
+                    name='agree_terms_and_data_processing'
+                    {...form.getInputProps('agree_terms_and_data_processing', {
                       type: 'checkbox',
                     })}
                   />
