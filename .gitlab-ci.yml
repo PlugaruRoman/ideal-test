@@ -13,3 +13,7 @@ pages:
       - out
   # Publish the contents of the "out" folder to the web using Pages
   publish: out
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
