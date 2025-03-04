@@ -22,7 +22,8 @@ export const ProductsSection = () => {
       <PageContainer
         mx={{ xs: '0', sm: '25px' }}
         h='100%'
-        py='200px'
+        pt='50px'
+        pb='200px'
         id={NavSectionsType.PRODUCTS_SECTION}
         pos='relative'
       >
