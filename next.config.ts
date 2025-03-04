@@ -1,23 +1,15 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  redirects: async () => [
-    {
-      source: '/',
-      destination: '/home',
-      permanent: true,
-    },
-    { source: '/ro', destination: '/home', permanent: true },
-    {
-      source: '/ru',
-      destination: '/home',
-      permanent: true,
-    },
-  ],
-
+  images: {
+    unoptimized: true, // Ensures images are exported correctly
+  },
+  trailingSlash: true, // Ensures proper routing on GitLab Pages
+  distDir: 'build',
   output: 'standalone',
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
+
     turbo: {
       rules: {
         '*.svg': {
