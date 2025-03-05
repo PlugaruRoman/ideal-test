@@ -28,10 +28,6 @@ export const ProductsSection = () => {
         pos='relative'
       >
         <Flex gap='40px'>
-          <Title order={2} fz='40px' miw='20%' fw={600}>
-            {t('insurance_types')}
-          </Title>
-
           <Grid gutter='20px'>
             {products?.map((product) => (
               <GridCol

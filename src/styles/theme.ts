@@ -3,7 +3,6 @@
 import { MantineThemeOverride } from '@mantine/core'
 
 export const theme: MantineThemeOverride = {
-  fontFamily: 'Onest, sans-serif',
   fontSizes: {
     xs: '13px',
     sm: '16px',
